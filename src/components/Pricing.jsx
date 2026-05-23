@@ -1,0 +1,268 @@
+import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import checkCircleIcon from '../assets/circle-check.svg'
+
+const Pricing = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [selectedPlan, setSelectedPlan] = useState('')
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const pricingPlans = [
+    { 
+      name: 'Capstone Project', 
+      price: '₱6,000', 
+      period: '- ₱10,000', 
+      subtitle: 'for students',
+      features: [
+        'Full Capstone Project Build',
+        'Complete Documentation',
+        'Source Code Included',
+        'Basic UI/UX Design',
+        'Database Integration',
+        '1 Month Basic Support'
+      ], 
+      popular: false 
+    },
+    { 
+      name: 'Corporate Project', 
+      price: '₱20,000', 
+      period: '- ₱30,000', 
+      subtitle: 'for business',
+      features: [
+        'Full Business System Build',
+        'Custom UI/UX Design',
+        'Database Architecture',
+        'API Integration',
+        '3 Months Technical Support',
+        'Deployment Assistance'
+      ], 
+      popular: true 
+    },
+    { 
+      name: 'System Rebuild', 
+      price: '₱25,000', 
+      period: '- ₱40,000', 
+      subtitle: 'only for business',
+      features: [
+        'Complete System Audit',
+        'Code Refactoring & Optimization',
+        'UI/UX Redesign',
+        'Performance Enhancement',
+        'Security Upgrade',
+        '6 Months Premium Support'
+      ], 
+      popular: false 
+    }
+  ]
+
+  const showSuccessAlert = (planName, userName) => {
+    Swal.fire({
+      title: 'Inquiry Submitted!',
+      html: `
+        <div style="text-align: center;">
+          <div style="font-size: 48px; margin-bottom: 16px;">📋</div>
+          <p style="margin-bottom: 8px;">Thank you, <strong>${userName}</strong>!</p>
+          <p>Your inquiry for <strong style="color: #06b6d4;">${planName}</strong> has been received.</p>
+          <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Our team will contact you within 24 hours.</p>
+        </div>
+      `,
+      icon: 'success',
+      confirmButtonText: 'Close',
+      confirmButtonColor: '#06b6d4',
+      timer: 5000,
+      timerProgressBar: true,
+      showConfirmButton: true,
+      allowOutsideClick: true
+    })
+  }
+
+  const showErrorAlert = () => {
+    Swal.fire({
+      title: 'Something went wrong',
+      html: '<p>Failed to send your inquiry. Please try again or contact us directly.</p>',
+      icon: 'error',
+      confirmButtonText: 'Try Again',
+      confirmButtonColor: '#06b6d4'
+    })
+  }
+
+  // SIMPLE TEST: Direktang i-set ang selected plan
+  const handleSelectPlan = (planName) => {
+    console.log('========== BUTTON CLICKED ==========')
+    console.log('You clicked:', planName)
+    console.log('====================================')
+    
+    // Direktang i-set
+    setSelectedPlan(planName)
+    setShowModal(true)
+    setName('')
+    setEmail('')
+    
+    // I-check kung nagbago
+    setTimeout(() => {
+      console.log('Selected plan after 500ms:', planName)
+    }, 500)
+  }
+
+  const handleSubmitInquiry = async (e) => {
+    e.preventDefault()
+    
+    console.log('Submitting with plan:', selectedPlan)
+    
+    if (!name || !email) {
+      Swal.fire({
+        title: 'Missing Information',
+        html: '<p>Please enter your name and email address to continue.</p>',
+        icon: 'warning',
+        confirmButtonText: 'Got it',
+        confirmButtonColor: '#06b6d4'
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+
+    Swal.fire({
+      title: 'Sending Inquiry...',
+      html: '<div style="margin-top: 16px;">Please wait while we process your request.</div>',
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      willOpen: () => {
+        Swal.showLoading()
+      }
+    })
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/upstaff7@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          plan: selectedPlan,
+          message: `New inquiry for ${selectedPlan} plan from ${name} (${email})`,
+          _subject: `New Inquiry: ${selectedPlan} Plan`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+
+      if (response.ok) {
+        Swal.close()
+        showSuccessAlert(selectedPlan, name)
+        setShowModal(false)
+        setName('')
+        setEmail('')
+      } else {
+        Swal.close()
+        showErrorAlert()
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      Swal.close()
+      showErrorAlert()
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return (
+    <>
+      <section className="section" id="pricing">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Investment Tiers</h2>
+            <p className="section-subtitle">Transparent pricing for premium craftsmanship.</p>
+          </div>
+          <div className="pricing-grid">
+            {pricingPlans.map((plan, index) => (
+              <div key={index} className={`pricing-card ${plan.popular ? 'popular' : ''}`}>
+                {plan.popular && <div className="popular-badge">MOST POPULAR</div>}
+                <h3 className="pricing-name">{plan.name}</h3>
+                <div className="pricing-price">
+                  {plan.price}<span className="pricing-price-small">{plan.period}</span>
+                </div>
+                <div className="pricing-subtitle">{plan.subtitle}</div>
+                <ul className="pricing-features">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <img 
+                        src={checkCircleIcon} 
+                        alt="Check icon"
+                        style={{ width: '20px', height: '20px' }}
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button 
+                  className={`pricing-btn ${plan.popular ? 'pricing-btn-primary' : 'pricing-btn-outline'}`}
+                  onClick={() => handleSelectPlan(plan.name)}
+                >
+                  {plan.name === 'Corporate Project' ? 'Get Started' : 'Get Started'}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Inquiry Modal */}
+      {showModal && (
+        <div className="inquiry-modal-overlay">
+          <div className="inquiry-modal glass-card">
+            <button className="inquiry-modal-close" onClick={() => setShowModal(false)}>✕</button>
+            <h3 className="inquiry-modal-title">Request for {selectedPlan}</h3>
+            <p className="inquiry-modal-subtitle">Please provide your details so we can contact you.</p>
+            
+            <form onSubmit={handleSubmitInquiry} className="inquiry-form">
+              <div className="inquiry-form-group">
+                <label>Your Name</label>
+                <input 
+                  type="text" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="e.g., Juan Dela Cruz"
+                  required
+                />
+              </div>
+              
+              <div className="inquiry-form-group">
+                <label>Email Address</label>
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="e.g., juandelacruz@email.com"
+                  required
+                />
+              </div>
+              
+              <div className="inquiry-form-group">
+                <label>Selected Plan</label>
+                <input 
+                  type="text" 
+                  value={selectedPlan}
+                  disabled
+                  className="disabled-input"
+                  readOnly
+                />
+              </div>
+              
+              <button type="submit" className="inquiry-submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
+
+export default Pricing
