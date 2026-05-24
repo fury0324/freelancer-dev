@@ -26,7 +26,7 @@ const Hero = () => {
           <span className="badge-text">Available for New Projects</span>
         </div>
         <h1 className="hero-title">
-          <span className="hero-title-light">Dimension Freelanc</span><br />
+          <span className="hero-title-light">Dimension Freelance</span><br />
           <span className="hero-title-gradient">Developer</span>
         </h1>
         <p className="hero-desc">
