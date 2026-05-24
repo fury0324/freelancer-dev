@@ -29,7 +29,7 @@ const Pricing = () => {
       name: 'Corporate Project', 
       price: '₱20,000', 
       period: '- ₱30,000', 
-      subtitle: 'for business',
+      subtitle: 'for Small Business', 
       features: [
         'Full Business System Build',
         'Custom UI/UX Design',
@@ -62,7 +62,6 @@ const Pricing = () => {
       title: 'Inquiry Submitted!',
       html: `
         <div style="text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px;">📋</div>
           <p style="margin-bottom: 8px;">Thank you, <strong>${userName}</strong>!</p>
           <p>Your inquiry for <strong style="color: #06b6d4;">${planName}</strong> has been received.</p>
           <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Our team will contact you within 24 hours.</p>
@@ -88,28 +87,15 @@ const Pricing = () => {
     })
   }
 
-  // SIMPLE TEST: Direktang i-set ang selected plan
   const handleSelectPlan = (planName) => {
-    console.log('========== BUTTON CLICKED ==========')
-    console.log('You clicked:', planName)
-    console.log('====================================')
-    
-    // Direktang i-set
     setSelectedPlan(planName)
     setShowModal(true)
     setName('')
     setEmail('')
-    
-    // I-check kung nagbago
-    setTimeout(() => {
-      console.log('Selected plan after 500ms:', planName)
-    }, 500)
   }
 
   const handleSubmitInquiry = async (e) => {
     e.preventDefault()
-    
-    console.log('Submitting with plan:', selectedPlan)
     
     if (!name || !email) {
       Swal.fire({
@@ -135,24 +121,26 @@ const Pricing = () => {
     })
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/upstaff7@gmail.com', {
+      // Web3Forms submission (same access_key sa Contact)
+      const formDataToSend = new FormData()
+      formDataToSend.append('access_key', '3e10fd8e-b7b6-4b36-b555-e37dde59f3f1')
+      formDataToSend.append('name', name)
+      formDataToSend.append('email', email)
+      formDataToSend.append('message', `
+Plan: ${selectedPlan}
+
+New inquiry for ${selectedPlan} plan from ${name} (${email})
+      `)
+      formDataToSend.append('subject', `New Inquiry: ${selectedPlan} Plan`)
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          plan: selectedPlan,
-          message: `New inquiry for ${selectedPlan} plan from ${name} (${email})`,
-          _subject: `New Inquiry: ${selectedPlan} Plan`,
-          _template: 'table',
-          _captcha: 'false'
-        })
+        body: formDataToSend
       })
 
-      if (response.ok) {
+      const data = await response.json()
+
+      if (data.success) {
         Swal.close()
         showSuccessAlert(selectedPlan, name)
         setShowModal(false)
@@ -204,7 +192,7 @@ const Pricing = () => {
                   className={`pricing-btn ${plan.popular ? 'pricing-btn-primary' : 'pricing-btn-outline'}`}
                   onClick={() => handleSelectPlan(plan.name)}
                 >
-                  {plan.name === 'Corporate Project' ? 'Get Started' : 'Get Started'}
+                  Get Started
                 </button>
               </div>
             ))}
@@ -227,7 +215,7 @@ const Pricing = () => {
                   type="text" 
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g., Juan Dela Cruz"
+                  placeholder="e.g., steve strange"
                   required
                 />
               </div>
@@ -238,7 +226,7 @@ const Pricing = () => {
                   type="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="e.g., juandelacruz@email.com"
+                  placeholder="e.g., stevestrange@email.com"
                   required
                 />
               </div>

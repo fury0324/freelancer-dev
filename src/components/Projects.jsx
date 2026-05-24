@@ -1,14 +1,28 @@
 import React from 'react'
 import eyeIcon from '../assets/eye.svg'
+import project1Img from '../assets/project1.png'
+import project2Img from '../assets/project2.png'
 
 const Projects = () => {
   const projects = [
-    { name: 'Nexus Dashboard V2', desc: 'Real-time enterprise intelligence platform for global logistics.', tags: ['REACT', 'SUPABASE', 'TAILWIND'], img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop' },
-    { name: 'Aura Fintech App', desc: 'Next-gen wealth management with advanced biometric security.', tags: ['FLUTTER', 'FRAMER MOTION', 'FIREBASE'], img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&h=450&fit=crop' }
+    { 
+      name: 'DTR Monitoring with Geolocation', 
+      desc: 'A comprehensive time tracking system with real-time location monitoring. Perfect for remote workforce management and attendance tracking.', 
+      tags: ['HTML', 'TAILWIND CSS', 'JAVASCRIPT', 'PHP', 'MYSQL'], 
+      img: project1Img,
+      githubUrl: 'https://github.com/fury0324/dtrmonitoringwithGeolaocation/tree/main/dtr-web-app'
+    },
+    { 
+      name: 'Employee Academy', 
+      desc: 'An employee learning and development platform designed for corporate training, skill tracking, and career progression management.', 
+      tags: ['HTML', 'TAILWIND CSS', 'JAVASCRIPT', 'PHP', 'MYSQL'], 
+      img: project2Img,
+      githubUrl: 'https://github.com/fury0324/employee-academy'  // Palitan ng actual GitHub URL
+    }
   ]
 
-  const handleViewProject = (projectName) => {
-    alert(`Viewing project: ${projectName}`)
+  const handleViewProject = (githubUrl, projectName) => {
+    window.open(githubUrl, '_blank')
   }
 
   return (
@@ -17,7 +31,12 @@ const Projects = () => {
         <h2 className="section-title">Selected Works</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-card" onClick={() => handleViewProject(project.name)}>
+            <div 
+              key={index} 
+              className="project-card" 
+              onClick={() => handleViewProject(project.githubUrl, project.name)}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="project-image">
                 <img className="project-img" src={project.img} alt={project.name} />
                 <div className="project-overlay">

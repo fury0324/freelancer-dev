@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import steveImg from '../assets/steve.png'
 import sarahImg from '../assets/romyl.png'
-import albertImg from '../assets/albert.jpg'  // Image para kay Marcus Thorne
+import albertImg from '../assets/albert.jpg'
+import shamirImg from '../assets/shamir.jpg'
 
 const Team = () => {
   const [flippedCard, setFlippedCard] = useState(null)
@@ -59,9 +60,9 @@ const Team = () => {
       ]
     },
     { 
-      name: 'Albert Dela peña', 
+      name: 'Albert Dela Peña', 
       role: 'Backend Dev', 
-      img: albertImg,  // Ginamit ang albert.png
+      img: albertImg,
       techStack: ['PHP', 'JavaScript', 'Laravel', 'Django', 'MySQL', 'Supabase', 'Firebase'],
       icons: [
         <svg key="storage" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -88,26 +89,26 @@ const Team = () => {
       ]
     },
     { 
-      name: 'Lena Volkov', 
-      role: 'Mobile Specialist', 
-      img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
-      techStack: ['Flutter', 'React Native', 'Kotlin', 'Swift', 'Firebase', 'GraphQL'],
+      name: 'Shamir Rasul', 
+      role: 'Frontend Dev', 
+      img: shamirImg,
+      techStack: ['Tailwind CSS', 'JavaScript', 'PHP', 'React', 'Vite'],
       icons: [
-        <svg key="smartphone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-          <line x1="12" y1="18" x2="12" y2="18" strokeWidth="2"/>
+        // Frontend-related icons
+        <svg key="code" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
         </svg>,
-        <svg key="flutter_dash" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 3L15 3L5 13L15 13" fill="none"/>
-          <path d="M15 3L19 7L9 17" fill="none"/>
+        <svg key="layout" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="3" y1="15" x2="21" y2="15"/>
+          <line x1="9" y1="21" x2="9" y2="9"/>
         </svg>,
-        <svg key="api" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 4h16v16H4z"/>
-          <path d="M9 9h6v6H9z"/>
-          <line x1="9" y1="4" x2="9" y2="9"/>
-          <line x1="15" y1="4" x2="15" y2="9"/>
-          <line x1="4" y1="9" x2="9" y2="9"/>
-          <line x1="20" y1="9" x2="15" y2="9"/>
+        <svg key="globe" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
       ]
     }
