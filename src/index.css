@@ -898,6 +898,11 @@ html:not(.dark) .pricing-subtitle {
   gap: 24px;
 }
 
+.contact-details-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .contact-item {
   display: flex;
   align-items: center;

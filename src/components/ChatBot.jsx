@@ -49,7 +49,7 @@ const ChatBot = () => {
         ...prev,
         {
           role: 'assistant',
-          content: "Sorry, something went wrong on my end. Please email us at upstaff7@gmail.com and we'll get back to you.",
+          content: "Sorry, something went wrong on my end. Please email us at dimensionfreelance@gmail.com and we'll get back to you.",
         },
       ])
     } finally {

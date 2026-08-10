@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import mailIcon from '../assets/mail-open.svg'
-import locationIcon from '../assets/map-pin-search.svg'
+import phoneIcon from '../assets/phone.svg'
+import messengerIcon from '../assets/messenger.svg'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -111,30 +112,44 @@ ${formData.message}
               Stop dreaming and start shipping. Our team is ready to transform your complex requirements into a streamlined reality.
             </p>
             <div className="contact-details">
+              <h3 className="contact-details-title">Contact Info</h3>
               <div className="contact-item">
                 <div className="contact-icon">
-                  <img 
-                    src={mailIcon} 
+                  <img
+                    src={phoneIcon}
+                    alt="Phone icon"
+                    style={{ width: '24px', height: '24px' }}
+                  />
+                </div>
+                <div>
+                  <div className="contact-label">Phone</div>
+                  <div className="contact-value">0966 713 1687</div>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <img
+                    src={mailIcon}
                     alt="Email icon"
                     style={{ width: '24px', height: '24px' }}
                   />
                 </div>
                 <div>
                   <div className="contact-label">Email Us</div>
-                  <div className="contact-value">upstaff7@gmail.com</div>
+                  <div className="contact-value">dimensionfreelance@gmail.com</div>
                 </div>
               </div>
               <div className="contact-item">
                 <div className="contact-icon">
-                  <img 
-                    src={locationIcon} 
-                    alt="Location icon"
+                  <img
+                    src={messengerIcon}
+                    alt="Messenger icon"
                     style={{ width: '24px', height: '24px' }}
                   />
                 </div>
                 <div>
-                  <div className="contact-label">Location</div>
-                  <div className="contact-value">Zamboanga City, Philippines</div>
+                  <div className="contact-label">Messenger</div>
+                  <div className="contact-value">Dimension Freelance</div>
                 </div>
               </div>
             </div>
