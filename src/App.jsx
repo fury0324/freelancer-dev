@@ -9,6 +9,7 @@ import TechMarquee from './components/TechMarquee'
 import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ChatBot from './components/ChatBot'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -33,6 +34,7 @@ function App() {
       <Pricing />
       <Contact />
       <Footer />
+      <ChatBot />
     </div>
   )
 }
