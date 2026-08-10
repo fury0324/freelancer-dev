@@ -11,9 +11,9 @@ const Pricing = () => {
 
   const pricingPlans = [
     { 
-      name: 'Capstone Project', 
-      price: '₱6,000', 
-      period: '- ₱10,000', 
+      name: 'Capstone Project',
+      price: '₱10,000',
+      period: '- ₱15,000',
       subtitle: 'for students',
       features: [
         'Full Capstone Project Build',
