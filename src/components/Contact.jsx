@@ -27,7 +27,7 @@ const Contact = () => {
         title: 'Missing Information',
         text: 'Please fill out all fields.',
         icon: 'warning',
-        confirmButtonColor: '#06b6d4'
+        confirmButtonColor: '#F97316'
       })
       return
     }
@@ -76,7 +76,7 @@ ${formData.message}
             </div>
           `,
           icon: 'success',
-          confirmButtonColor: '#06b6d4',
+          confirmButtonColor: '#F97316',
           timer: 5000
         })
         
@@ -94,7 +94,7 @@ ${formData.message}
         title: 'Error!',
         text: 'Something went wrong. Please try again.',
         icon: 'error',
-        confirmButtonColor: '#06b6d4'
+        confirmButtonColor: '#F97316'
       })
     } finally {
       setIsSubmitting(false)

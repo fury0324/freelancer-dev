@@ -3,6 +3,7 @@ import steveImg from '../assets/steve.png'
 import sarahImg from '../assets/romyl.png'
 import albertImg from '../assets/albert.jpg'
 import shamirImg from '../assets/shamir.jpg'
+import angeloImg from '../assets/angelo.png'
 
 const Team = () => {
   const [flippedCard, setFlippedCard] = useState(null)
@@ -12,30 +13,8 @@ const Team = () => {
   }
 
   const teamMembers = [
-    { 
-      name: 'Steven Antonio', 
-      role: 'Lead Dev', 
-      img: steveImg,
-      techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'TailwindCSS', 'Next.js', 'Laravel', 'React.js', 'PHP', 'MySQL', 'Supabase', 'Firebase'],
-      icons: [
-        <svg key="groups" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>,
-        <svg key="code" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="16 18 22 12 16 6"/>
-          <polyline points="8 6 2 12 8 18"/>
-        </svg>,
-        <svg key="terminal" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="4 17 10 11 4 5"/>
-          <line x1="12" y1="19" x2="20" y2="19"/>
-        </svg>
-      ]
-    },
-    { 
-      name: 'Romyl Magwate', 
+    {
+      name: 'Romyl Magwate',
       role: 'UI/UX Strategy', 
       img: sarahImg,
       techStack: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Framer', 'Miro'],
@@ -88,8 +67,30 @@ const Team = () => {
         </svg>
       ]
     },
-    { 
-      name: 'Shamir Rasul', 
+    {
+      name: 'Steven Antonio',
+      role: 'Lead Dev',
+      img: steveImg,
+      techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'TailwindCSS', 'Next.js', 'Laravel', 'React.js', 'PHP', 'MySQL', 'Supabase', 'Firebase'],
+      icons: [
+        <svg key="groups" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>,
+        <svg key="code" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>,
+        <svg key="terminal" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="4 17 10 11 4 5"/>
+          <line x1="12" y1="19" x2="20" y2="19"/>
+        </svg>
+      ]
+    },
+    {
+      name: 'Shamir Rasul',
       role: 'Frontend Dev', 
       img: shamirImg,
       techStack: ['Tailwind CSS', 'JavaScript', 'PHP', 'React', 'Vite'],
@@ -109,6 +110,28 @@ const Team = () => {
           <circle cx="12" cy="12" r="10"/>
           <line x1="2" y1="12" x2="22" y2="12"/>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      ]
+    },
+    {
+      name: 'Angelo Depamaylo',
+      role: 'Mobile App Dev',
+      img: angeloImg,
+      techStack: ['Flutter', 'Dart', 'Firebase', 'React Native'],
+      icons: [
+        // Mobile-related icons
+        <svg key="smartphone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+          <line x1="12" y1="18" x2="12" y2="18" strokeWidth="2"/>
+        </svg>,
+        <svg key="code" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>,
+        <svg key="layers" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2 17 12 22 22 17"/>
+          <polyline points="2 12 12 17 22 12"/>
         </svg>
       ]
     }
@@ -136,7 +159,7 @@ const Team = () => {
                   <p className="team-role">{member.role}</p>
                   <div className="team-social">
                     {member.icons.map((icon, idx) => (
-                      <span key={idx} className="team-icon" style={{ color: '#06b6d4' }}>
+                      <span key={idx} className="team-icon" style={{ color: '#F97316' }}>
                         {icon}
                       </span>
                     ))}

@@ -75,7 +75,7 @@ const Services = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className={`service-card ${index === 1 ? 'featured' : ''}`}>
-              <div className="service-icon" style={{ color: '#06b6d4' }}>
+              <div className="service-icon" style={{ color: '#F97316' }}>
                 {service.icon}
               </div>
               <h3 className="service-title">{service.title}</h3>

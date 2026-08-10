@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import moonIcon from '../assets/moon.svg'
 import sunIcon from '../assets/sun.svg'
 import whiteLogo from '../assets/white-icon.png'
-import blackLogo from '../assets/black-icon.png'
+import blackLogo from '../assets/black-icon-orange.png'
 
 const Navbar = ({ scrolled }) => {
   const [activeSection, setActiveSection] = useState('home')
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isInitialized, setIsInitialized] = useState(false)
 
@@ -56,13 +56,11 @@ const Navbar = ({ scrolled }) => {
     }
   }
 
-  // I-set ang dark mode agad pag-load ng page
+  // I-set ang light mode agad pag-load ng page
   useEffect(() => {
     const html = document.documentElement
-    if (!html.classList.contains('dark')) {
-      html.classList.add('dark')
-    }
-    setIsDark(true)
+    html.classList.remove('dark')
+    setIsDark(false)
     setIsInitialized(true)
   }, [])
 

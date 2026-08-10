@@ -63,13 +63,13 @@ const Pricing = () => {
       html: `
         <div style="text-align: center;">
           <p style="margin-bottom: 8px;">Thank you, <strong>${userName}</strong>!</p>
-          <p>Your inquiry for <strong style="color: #06b6d4;">${planName}</strong> has been received.</p>
+          <p>Your inquiry for <strong style="color: #F97316;">${planName}</strong> has been received.</p>
           <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Our team will contact you within 24 hours.</p>
         </div>
       `,
       icon: 'success',
       confirmButtonText: 'Close',
-      confirmButtonColor: '#06b6d4',
+      confirmButtonColor: '#F97316',
       timer: 5000,
       timerProgressBar: true,
       showConfirmButton: true,
@@ -83,7 +83,7 @@ const Pricing = () => {
       html: '<p>Failed to send your inquiry. Please try again or contact us directly.</p>',
       icon: 'error',
       confirmButtonText: 'Try Again',
-      confirmButtonColor: '#06b6d4'
+      confirmButtonColor: '#F97316'
     })
   }
 
@@ -103,7 +103,7 @@ const Pricing = () => {
         html: '<p>Please enter your name and email address to continue.</p>',
         icon: 'warning',
         confirmButtonText: 'Got it',
-        confirmButtonColor: '#06b6d4'
+        confirmButtonColor: '#F97316'
       })
       return
     }
