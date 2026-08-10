@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   const stats = [
     { value: '10+', label: 'PROJECTS COMPLETED' },
-    { value: '4', label: 'TEAM MEMBERS' },
+    { value: '5', label: 'TEAM MEMBERS' },
     { value: '100%', label: 'CLIENT SATISFACTION' },
     { value: '24/7', label: 'SUPPORT AVAILABLE' }
   ]
