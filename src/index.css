@@ -854,10 +854,10 @@ html.dark body {
 .pricing-subtitle {
   font-size: 14px;
   color: #FB923C;
-  margin-top: -20px;
+  margin-top: -4px;
   margin-bottom: 24px;
   font-family: 'JetBrains Mono', monospace;
-  text-align: center;
+  text-align: left;
 }
 
 /* Light mode pricing subtitle */
