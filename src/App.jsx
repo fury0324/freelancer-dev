@@ -6,6 +6,7 @@ import Team from './components/Team'
 import Services from './components/Services'
 import Projects from './components/Projects'
 import TechMarquee from './components/TechMarquee'
+import Pricing from './components/Pricing'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ChatBot from './components/ChatBot'
@@ -30,6 +31,7 @@ function App() {
       <Services />
       <Projects />
       <TechMarquee />
+      <Pricing />
       <Contact />
       <Footer />
       <ChatBot />

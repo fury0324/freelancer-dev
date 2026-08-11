@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 
-const GREETING = "Hi! 👋 I'm the Dimension assistant. Ask me about our services or team."
+const GREETING = "Hi! 👋 I'm the Dimension assistant. Ask me about our services, pricing, or team."
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -118,7 +118,7 @@ const ChatBot = () => {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about our services..."
+            placeholder="Ask about services, pricing..."
             disabled={isTyping}
           />
           <button type="submit" className="chatbot-send" disabled={isTyping || !input.trim()} aria-label="Send message">

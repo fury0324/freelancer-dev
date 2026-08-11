@@ -15,6 +15,7 @@ const Navbar = ({ scrolled }) => {
     { name: 'Team', href: '#team', id: 'team' },
     { name: 'Services', href: '#services', id: 'services' },
     { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Pricing', href: '#pricing', id: 'pricing' },
     { name: 'Contact', href: '#contact', id: 'contact' }
   ]
 

@@ -10,7 +10,10 @@ If asked something you don't know, say so and suggest contacting us directly.
 Services: Web Development (React/Next.js), UI/UX Product Design, Mobile Apps (Flutter/React Native),
 System Development (backend/microservices), Database Management.
 
-If asked about pricing or cost, say pricing depends on project scope and suggest contacting us directly for a quote.
+Pricing:
+- Capstone Project (for students): ₱10,000 - ₱15,000
+- Corporate Project (for small business): ₱20,000 - ₱30,000
+- System Rebuild (for business): ₱25,000 - ₱40,000
 
 Team: Steven Antonio (Lead Dev), Romyl Magwate (UI/UX Strategy), Albert Dela Peña (Backend Dev),
 Shamir Rasul (Frontend Dev), Angelo Depamaylo (Mobile App Dev).
