@@ -10,10 +10,8 @@ const Pricing = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const pricingPlans = [
-    { 
+    {
       name: 'Capstone Project',
-      price: '₱10,000',
-      period: '- ₱15,000',
       subtitle: 'for students',
       features: [
         'Full Capstone Project Build',
@@ -25,11 +23,9 @@ const Pricing = () => {
       ], 
       popular: false 
     },
-    { 
-      name: 'Corporate Project', 
-      price: '₱20,000', 
-      period: '- ₱30,000', 
-      subtitle: 'for Small Business', 
+    {
+      name: 'Corporate Project',
+      subtitle: 'for Small Business',
       features: [
         'Full Business System Build',
         'Custom UI/UX Design',
@@ -40,10 +36,8 @@ const Pricing = () => {
       ], 
       popular: true 
     },
-    { 
-      name: 'System Rebuild', 
-      price: '₱25,000', 
-      period: '- ₱40,000', 
+    {
+      name: 'System Rebuild',
       subtitle: 'only for business',
       features: [
         'Complete System Audit',
@@ -165,16 +159,13 @@ New inquiry for ${selectedPlan} plan from ${name} (${email})
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Investment Tiers</h2>
-            <p className="section-subtitle">Transparent pricing for premium craftsmanship.</p>
+            <p className="section-subtitle">Custom quotes tailored to your project.</p>
           </div>
           <div className="pricing-grid">
             {pricingPlans.map((plan, index) => (
               <div key={index} className={`pricing-card ${plan.popular ? 'popular' : ''}`}>
                 {plan.popular && <div className="popular-badge">MOST POPULAR</div>}
                 <h3 className="pricing-name">{plan.name}</h3>
-                <div className="pricing-price">
-                  {plan.price}<span className="pricing-price-small">{plan.period}</span>
-                </div>
                 <div className="pricing-subtitle">{plan.subtitle}</div>
                 <ul className="pricing-features">
                   {plan.features.map((feature, idx) => (
