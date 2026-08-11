@@ -751,120 +751,6 @@ html.dark body {
   font-weight: 700;
 }
 
-/* Pricing */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.pricing-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 2.5rem;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.pricing-card.popular {
-  border-color: rgba(251, 146, 60, 0.5);
-}
-
-.popular-badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  padding: 4px 16px;
-  font-size: 10px;
-  font-weight: 700;
-  border-radius: 0 2.5rem 0 1rem;
-  color: #FFFFFF;
-}
-
-.pricing-name {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.pricing-price {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-.pricing-price-small {
-  font-size: 18px;
-  font-weight: 400;
-  color: #C9BEB4;
-}
-
-.pricing-features {
-  list-style: none;
-  margin-bottom: 40px;
-  flex-grow: 1;
-}
-
-.pricing-features li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: #C9BEB4;
-}
-
-.pricing-features li span {
-  color: #FB923C;
-}
-
-.pricing-btn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  background: transparent;
-  border: 1px solid rgba(120, 100, 85, 0.5);
-  color: #e5e2e1;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.pricing-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.pricing-btn-primary {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  color: #FFFFFF;
-  border: none;
-}
-
-/* ===== PRICING SUBTITLE STYLES ===== */
-.pricing-subtitle {
-  font-size: 14px;
-  color: #FB923C;
-  margin-top: -20px;
-  margin-bottom: 24px;
-  font-family: 'JetBrains Mono', monospace;
-  text-align: center;
-}
-
-/* Light mode pricing subtitle */
-html:not(.dark) .pricing-subtitle {
-  color: #F97316;
-}
-
 /* Contact */
 .contact-card {
   padding: 48px 80px;
@@ -1168,17 +1054,14 @@ html:not(.dark) .section-text,
 html:not(.dark) .service-desc,
 html:not(.dark) .project-desc,
 html:not(.dark) .contact-text,
-html:not(.dark) .contact-value,
-html:not(.dark) .pricing-features li,
-html:not(.dark) .pricing-price-small {
+html:not(.dark) .contact-value {
   color: #4a4a4a;
 }
 
 /* Light mode glass cards */
 html:not(.dark) .glass-card,
 html:not(.dark) .team-card,
-html:not(.dark) .service-card,
-html:not(.dark) .pricing-card {
+html:not(.dark) .service-card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1188,15 +1071,8 @@ html:not(.dark) .pricing-card {
 
 /* Light mode card hover effects */
 html:not(.dark) .team-card:hover,
-html:not(.dark) .service-card:hover,
-html:not(.dark) .pricing-card:hover {
+html:not(.dark) .service-card:hover {
   border-color: rgba(249, 115, 22, 0.3);
-  background: rgba(255, 255, 255, 0.85);
-}
-
-/* Light mode pricing card popular */
-html:not(.dark) .pricing-card.popular {
-  border-color: #F97316;
   background: rgba(255, 255, 255, 0.85);
 }
 
@@ -1638,59 +1514,6 @@ html:not(.dark) .tech-stack-item {
   }
 }
 
-/* ===== PRICING BUTTON STYLES ===== */
-.pricing-btn-outline {
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  background: transparent;
-  border: 1px solid rgba(251, 146, 60, 0.5);
-  color: #FB923C;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.pricing-btn-outline:hover {
-  background: rgba(251, 146, 60, 0.1);
-  border-color: #FB923C;
-  transform: translateY(-2px);
-}
-
-.pricing-btn-primary {
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  color: #ffffff;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.pricing-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
-}
-
-/* Light mode button styles */
-html:not(.dark) .pricing-btn-outline {
-  border: 1px solid #F97316;
-  color: #F97316;
-}
-
-html:not(.dark) .pricing-btn-outline:hover {
-  background: rgba(249, 115, 22, 0.1);
-  color: #0284c7;
-  border-color: #0284c7;
-}
-
-html:not(.dark) .pricing-btn-primary {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  color: #ffffff;
-}
-
 /* ===== SWEETALERT LIGHT MODE STYLES ===== */
 html:not(.dark) .swal2-popup {
   background: #ffffff !important;
@@ -2049,11 +1872,6 @@ html:not(.dark) .team-card-front,
 html:not(.dark) .team-card-back {
   background: linear-gradient(165deg, #ffffff 0%, #FFEFDD 100%);
   border: 1px solid #F97316;
-}
-
-/* Pricing popular badge text stays readable on the orange gradient */
-html:not(.dark) .popular-badge {
-  color: #ffffff;
 }
 
 /* ===== CHATBOT WIDGET ===== */
